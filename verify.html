@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+  
+  <div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <strong>
+	      Check Your Mailbox for Account Activation Email
+	    </strong>
+	  </div>
+	  <div class="panel-body small">
+	     We have sent you an Account Activation Email at <strong style="font-size: 16px;">{{loggedUser.mail}}</strong> Please click on the Activate button in 
+       that email to verify your email address. <br>
+       <strong class="text-danger">Failing to do so will result in Account Suspension.</strong>
+       <br><br>
+       
+       If you don't see this email:
+       <ol>
+        <li style="margin:5px 0"><button class="btn btn-info btn-xs" data-ng-click="resendMail()">Resend email</button> & 
+        check your Junk/ Spam/ Promotions or Social folder in addition to your primary email folder.</li>
+        <li style="margin:5px 0">Check your email's spelling. If its incorrect, update your email here:<br>
+        <form name="emailForm"  data-ng-submit="changeSendMail(user)"  novalidate="novalidate">
+            
+            <div class="input-group" style="max-width:330px" data-ng-class="{ 'has-error' : emailForm.mail.$invalid && showMailError }">
+              <input name="mail" required="required" type="email" class="form-control input-xs" data-ng-model="user.info.mail" placeholder="New Mail">
+              <span class="input-group-btn">
+		        <button id="login-button" class="btn btn-info btn-xs" type="submit">Update</button>
+		      </span>
+            </div>
+            <span data-ng-show="emailForm.mail.$invalid && showMailError" class="text-danger">Invalid Email</span>
+          </form>
+        </li>
+        <li style="margin:5px 0">Still no email? Request for 
+        <strong>
+          <a target="_blank" href="mailto:contact@matrified.com?subject=Manual%20Activation%20Request%20-%20{{loggedUser.mail}}&amp;body=Mention%20your%20mobile%20number%20and%20ensure%20that%20you%20send%20this%20mail%20from%20the%20mailbox%20of%20{{loggedUser.mail}}">Manual Activation</a></strong>
+          </li> 
+       </ol>
+      <small>For any other assistance, call us at +919501470996 or 
+        <a href="mailto:contact@matrified.com?subject=Assistance%20Request%20-%20{{loggedUser.mail}}&amp;body=[Mention%20your%20mobile%20number%20and%20tell%20us%20how%20we%20can%20help%20you.]">Contact us</a>
+      </small>
+	  </div>
+  	  <div class="panel-footer">
+  	  	<div class="small" style="text-align:center">If Activated, continue to</div>
+	    <a href="#/profile" type="button" class="btn btn-xs btn-info">&larr; Upload picture</a>
+	    <a href="#/search" class="btn btn-xs btn-info pull-right">Search Partner &rarr;</a>
+	  </div>
+</div>
+  
+  
+  </div>
+</div>

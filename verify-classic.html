@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+      
+       <div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <strong>
+	      Check Your Mailbox for Account Activation Code
+	    </strong>
+	  </div>
+	  <div class="panel-body small">
+	     We have sent you an Account Activation Code at your Email <strong style="font-size: 16px;">{{loggedUser.mail}}</strong> Please copy that code and 
+	     paste  it below along with your contact number to verify your email address. <strong class="text-danger">Failing to do so will result in Account Suspension.</strong>
+      <br><br>
+      
+      
+      
+       <form class="well dark-well" name="activationForm" data-ng-submit="verify(user)" novalidate="novalidate">
+            <div class="form-group" data-ng-class="{ 'has-error' : activationForm.mailCode.$invalid && showError }">
+               <label class="control-label small" >Activation code</label>
+              <input style="max-width:395px"  name="mailCode" required="required" type="text" class="form-control input-sm" data-ng-model="user.meta.mailCode">
+              <small data-ng-show="activationForm.mailCode.$invalid && showError" class="help-block">Code is required</small>
+            </div>
+             <!--   <div class="form-group">
+               <label class="control-label small" >Control your mobile number privacy</label>
+              <div class="radio small">
+				  <label>
+				    <input type="radio" name="mobPrivacy" value="accepted" data-ng-model="user.meta.mobSec">
+				    Visible to the members I accept
+				  </label>
+				</div>
+				<div class="radio small">
+				  <label>
+				    <input type="radio" name="mobPrivacy" value="none" data-ng-model="user.meta.mobSec">
+				    Visible to nobody
+				  </label>
+				</div>
+              
+              </div> -->
+               <div class="form-group" data-ng-class="{ 'has-error' : activationForm.cell.$invalid && showError }">
+               <label class="control-label small" >Mobile no for verification call</label><br>
+              <div class="row">
+               <div class="col-sm-2 col-xs-5">
+              <input name="cellCode" id="cellCode" type="text" class="form-control input-sm" readonly="readonly" data-ng-model="user.cellCode">
+              </div>
+              <div class="col-sm-1 col-xs-1" style="padding:0;width:12px">
+              <strong>-</strong>
+              </div>
+              <div class="col-sm-5 col-xs-6">
+              <input name="cell" id="cellNumber" maxlength="18"  data-ng-minlength="10" required="required" type="text" class="form-control input-sm"  data-ng-model="user.cellNumber" data-ng-pattern="/^\d+$/"
+               placeholder="Eg: 8890123459 (no leading zero)">
+              </div>
+              </div>
+               <small data-ng-show="activationForm.cell.$invalid && showError" class="help-block">Invalid mobile no</small>
+            	<small><em>Providing an invalid mobile number will result in your account lockout.</em></small>
+            </div>
+              <button type="submit" class="btn btn-sm btn-success" id="login-button">Verify Account Details</button>
+          </form>
+      
+      
+       
+       If you don't see this email:
+       <ol>
+        <li style="margin:5px 0"><button class="btn btn-info btn-xs" data-ng-click="resendMail()">Resend email</button> & 
+        check your Junk/ Spam/ Promotions or Social folder in addition to your primary email folder.</li>
+        <li style="margin:5px 0">Check your email's spelling. If its incorrect, update your email here:<br>
+        <form name="emailForm"  data-ng-submit="changeSendMail(user)"  novalidate="novalidate">
+            
+            <div class="input-group" style="max-width:330px" data-ng-class="{ 'has-error' : emailForm.mail.$invalid && showMailError }">
+              <input name="mail" required="required" type="email" class="form-control input-xs" data-ng-model="user.info.mail" placeholder="New Mail">
+              <span class="input-group-btn">
+		        <button id="login-button" class="btn btn-info btn-xs" type="submit">Update</button>
+		      </span>
+            </div>
+            <span data-ng-show="emailForm.mail.$invalid && showMailError" class="text-danger">Invalid Email</span>
+          </form>
+        </li>
+        <li style="margin:5px 0">Still no email? Request for 
+         <strong>
+           <a target="_blank" href="mailto:contact@matrified.com?subject=Manual%20Activation%20Request%20-%20{{loggedUser.mail}}&amp;body=Mention%20your%20mobile%20number%20and%20ensure%20that%20you%20send%20this%20mail%20from%20the%20mailbox%20of%20{{loggedUser.mail}}">Manual Activation</a></strong></li> 
+       </ol>
+      <small>For any other assistance, call us at +919501470996 or 
+        <a href="mailto:contact@matrified.com?subject=Assistance%20Request%20-%20{{loggedUser.mail}}&amp;body=[Mention%20your%20mobile%20number%20and%20tell%20us%20how%20we%20can%20help%20you.]">Contact us</a>
+      </small>
+	  </div>
+</div>
+      
+  </div>
+</div>

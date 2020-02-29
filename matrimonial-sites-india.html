@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="MATRIMONIAL-APP">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Matrimonial Sites India, Matrimonial Sites India with contact details, Matrimonial Sites India with contact details, Matrimonial, Matrimonials, Matrimonial classified" name="keywords">
+    <meta name="description" content="Matrimonial Sites India with contact details offering FREE CONTACT SHARING and free matrimonial search. Simply contact a member and once both members accept each other's interests, they receive FREE contact details with our matrimonial sites India service. Also avail FREE Kundali matching and Zodiac reports with each match you pursue.">
+    <meta name="author" content="Apurav Chauhan">
+    <title>Matrimonial Sites| Matrimonial Sites India | Matrified.com</title>
+    <!-- All minified bundled css for app -->
+    <link rel="stylesheet" href="assets/css/app-all.min.css?v=5" >
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    	<script src="assets/js/html5shiv.js"></script>
+    	<script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 10]>
+   			<style type="text/css">
+    	.ie-top{
+    		margin-top:30px;
+    	}
+    	.ie-pad{
+    		padding-top:80px !important;
+    	}
+    	</style>
+    	<div id="top-warning">
+		<p><span class="glyphicon glyphicon-exclamation-sign"></span> Some features of the site might not work with this browser. Please upgrade to any of these latest browsers &nbsp; 
+			<a href='http://getfirefox.com'>FireFox</a>, 
+			<a href='http://www.google.com/chrome'>Chrome</a>, 
+			<a href='http://www.opera.com/download/'>Opera</a> or  
+			<a href='http://www.apple.com/safari/'>Safari</a> 
+			</p>
+		</div>
+    <![endif]-->
+    <script type="text/javascript" src="assets/js/mins/js-infrastructure.min.js"></script>
+  </head>
+  <body class="stylize ie-pad">
+    
+  <div class="navbar navbar-inverse navbar-fixed-top ie-top">
+      <div class="container">
+         <div class="navbar-header" style="padding-top:5px">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  	        <span>
+	  	        <span class="icon-bar" ></span>
+	  	        <span class="icon-bar"></span>
+	  	        <span class="icon-bar"></span>
+  	        </span>
+          </button>
+           <a class="navbar-brand" href="index.html" style="float:none;">
+            <img src="assets/img/free-matrimonial.png" alt="Matrimonial Sites India with contact details" title="Topmost all  Matrimonial Sites India with contact details - Matrified.com">
+          </a>
+        </div>
+         <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="free-matrimonial-sites.html">Features</a></li>
+            <li class="active"><a href="matrimonial-sites-india.html">How it works?</a></li>
+          </ul>
+          
+      </div>
+      </div>
+    </div>
+   
+     <div data-ng-show="requestProgress"  class="progress progress-custom progress-striped active navbar-fixed-top">
+      <div style="width: 100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar progress-bar-danger">
+        <span class="sr-only">100% Complete</span>
+      </div>
+    </div>
+    <div class="jumbotron">
+      <div class="container">
+      	 <div class="row">
+  
+  <div class="col-md-5" >
+   <div class="row">
+		<div class="alert alert-dismissible alert-warning" role="alert" style="padding:8px 10px">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          Get <a href="https://play.google.com/store/apps/details?id=com.webilm.matrified.app" 
+            target="_blank"><img style="width: 104px;" src="assets/img/playstore.png" alt="Android App on Google Play"></a> and enjoy services worth <strong>Rs 9000/-</strong> 
+        </div>
+      <div class="col-md-12 well dark-well" >
+        <form name="loginForm" data-ng-controller="LoginController" data-ng-submit="signin(user)" novalidate="novalidate">
+          <div class="row form-group">
+            <div class="col-sm-6">
+              <div class="form-group no-bottom"
+                data-ng-class="{ 'has-error' : loginForm.email.$invalid && showError }">
+                <label class="control-label small">Login Email</label> 
+                <input autofocus="autofocus" name="email" id="email-box" type="email" required="required" placeholder="Email" class="form-control input-sm" data-ng-model="user.uname">
+                <small data-ng-show="loginForm.email.$invalid && showError" class="help-block ng-cloak">Invalid email</small>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group no-bottom"
+                data-ng-class="{ 'has-error' : loginForm.pass.$invalid && showError }">
+                <label class="control-label small">Password</label> 
+                <input name="pass" required="required" id="pass-box" type="password" placeholder="Password" class="form-control input-sm" data-ng-model="user.pass">
+                <small data-ng-show="loginForm.pass.$error.required && showError" class="help-block ng-cloak">Required</small>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm">Login</button> <small><strong><a href="index.html#/initiate-reset/1">Forgot password?</a></strong></small>
+        </form>
+      </div>
+      <div data-ng-controller="SignupController">
+      
+      <div class="col-md-12 panel panel-success" style="padding:0;background-color: #ECF0F1">
+        <div class="panel-heading"><strong>New User? Register for free</strong></div>
+        <div class="panel-body">
+        <div data-ng-show="success" class="alert btn-info ng-cloak">
+          <strong>Congratulations!</strong> Your sign up was successful. Please login to enjoy our full services.
+        </div>
+        <form data-ng-submit="signup(user)"  name="signupForm" novalidate="novalidate">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="form-group"
+                data-ng-class="{ 'has-error' : signupForm.cat.$invalid && showError }">
+                <label class="control-label small">Your Gender</label> 
+                <select name="cat" class="form-control col-sm-12 auto-height" data-ng-model="user.meta.cat" data-ng-required="true">
+                  <option value=""></option>
+                  <option value="groom">Male</option>
+                  <option value="bride">Female</option>
+                </select>
+                <small data-ng-show="signupForm.cat.$invalid && showError"
+                  class="help-block">Required</small>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group"
+                data-ng-class="{ 'has-error' : signupForm.stat.$invalid && showError }">
+                <label class="control-label small">Your Status</label> 
+                <select name="stat" class="form-control col-sm-12" data-ng-model="user.meta.stat" data-ng-required="true">
+                  <option value=""></option>
+                  <option value="un">Unmarried</option>
+                  <option value="wid">Widowed</option>
+                  <option value="div">Divorced</option>
+                  <option value="wtDiv">Awaiting Divorce</option>
+                </select>
+                <small
+                  data-ng-show="signupForm.stat.$invalid && showError"
+                  class="help-block">Required</small>
+              </div>
+            </div>
+         <div class="col-xs-12">
+          <div class="form-group"
+            data-ng-class="{ 'has-error' : showError && (signupForm.bDate.$invalid || signupForm.bMonth.$invalid || signupForm.bYear.$invalid) }">
+            <label class="control-label small">Birth date <small><em>(Month-Day-Year)</em></small></label> 
+            <div class="row">
+              <div class="col-xs-4">
+                <select data-ng-required="true" name="bMonth" class="form-control col-sm-12 auto-height" 
+                  data-ng-model="user.meta.bMonth">
+                  <option value=""></option>
+                  <option value="0">January</option>
+                  <option value="1">February</option>
+                  <option value="2">March</option>
+                  <option value="3">April</option>
+                  <option value="4">May</option>
+                  <option value="5">June</option>
+                  <option value="6">July</option>
+                  <option value="7">August</option>
+                  <option value="8">September</option>
+                  <option value="9">October</option>
+                  <option value="10">November</option>
+                  <option value="11">December</option>
+                </select>
+              </div>
+              <div class="col-xs-4">
+                <select data-ng-required="true"  name="bDate" class="form-control col-sm-12 auto-height"
+                  data-ng-model="user.meta.bDay" data-ng-options="date as date for date in dateOptions">
+                </select>
+              </div>
+              <div class="col-xs-4">
+                <select data-ng-required="true" name="bYear" class="form-control col-sm-12 auto-height"
+                  data-ng-model="user.meta.bYear" data-ng-options="year as year for year in yearOptions">
+                </select>
+              </div>
+            </div>
+            <small
+              data-ng-show="showError && (signupForm.bDate.$invalid || signupForm.bMonth.$invalid || signupForm.bYear.$invalid)"
+              class="help-block">Please select birth date</small>
+            <small data-ng-show="invalidDate" class="help-block terms-error ng-cloak">Please select a valid date</small>
+          </div>
+          </div>
+          <div class="col-xs-12 col-sm-12">
+          	<div class="row">
+          	  <div class="col-sm-4">
+          <div class="form-group" data-ng-class="{ 'has-error' : signupForm.signupName.$invalid && showError }">
+            <label class="control-label small" >Contact Name</label>
+            <input type="text" name="signupName" class="form-control input-sm" data-ng-model="user.info.name" required="required"
+              data-ng-maxlength="40" data-ng-minlength="3" data-ng-pattern="/^[a-zA-Z ]*$/">
+            <small data-ng-show="signupForm.signupName.$invalid && showError" class="help-block">Invalid name</small>
+          </div>
+          </div>
+          <div class="col-xs-12 col-sm-8">
+          <div class="form-group" data-ng-class="{ 'has-error' : signupForm.cell.$invalid && showError }">
+            <label class="control-label small" >Mobile <small><em>(for security verification call)</em></small></label>
+            <div class="row">
+                  <div class="col-xs-4" style="padding-left: 9px;padding-right: 0;">
+                    <input name="cellCode" id="cellCode" type="text" class="form-control input-sm" readonly="readonly" data-ng-model="user.cellCode">
+                  </div>
+                  <div class="col-xs-8" style="padding-left: 0px;">
+                    <input name="cell" id="cellNumber" data-ng-pattern="/^[0-9]{10,11}$/" required="required" type="text" class="form-control input-sm"  data-ng-model="user.cellNumber" data-ng-pattern="/^\d+$/"
+                      placeholder="Eg: 8890123459 (no leading zero)">
+                  </div>
+                   <small data-ng-show="signupForm.cell.$invalid && showError" class="help-block ng-cloak"> 10 digit num required</small>
+                </div>
+               </div>
+          </div>
+          	
+          	</div>
+          </div>
+           
+           <div class="col-xs-12 col-sm-6">
+          <div class="form-group" data-ng-class="{ 'has-error' : signupForm.signupEmail.$invalid && showError }">
+            <label class="control-label small" >Contact Email</label>
+            <input type="email" id="signupEmail" name="signupEmail" class="form-control input-sm" data-ng-model="user.info.mail" required="required"
+              placeholder="Contact Email">
+            <small data-ng-show="signupForm.signupEmail.$invalid && showError" class="help-block">Invalid email</small>
+          </div>
+          </div>
+           <div class="col-xs-12 col-sm-6">
+          <div class="form-group" data-ng-class="{ 'has-error' : signupForm.signupPass.$invalid  && showError }">
+            <label class="control-label small" >Password</label>
+            <input type="password" id="signupPass" name="signupPass" class="form-control input-sm" data-ng-model="user.pass" placeholder="Password" 
+              required="required" data-ng-maxlength="50">
+            <small data-ng-show="signupForm.signupPass.$error.required && showError" class="help-block">Required</small>
+            <small data-ng-show="signupForm.signupPass.$error.maxlength && showError" class="help-block">Password is too long</small>
+          </div>
+          </div>
+          </div>
+         
+		  <small>By signing up, you agree to <a href="index.html#/terms" target="_blank">T&C</a> and <a href="index.html#/privacy" target="_blank">PP</a></small>
+          <button type="submit" class="btn btn-primary btn-block">Free Signup</button>
+        </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7" style="padding:0 0 0 10px">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h1 class="h1-feature">How it works ? -  Matrified.com</h1>
+    </div>
+    <div class="panel-body">
+   <div class="row">
+  
+                <div class="col-md-12 small">
+                 <div class="responsive-video" title="Matrified.com - Matrimonial sites india new Television Commercial">
+				   <iframe title="Matrified.com Matrimonial sites india new TVC" width="260" height="115" src="https://www.youtube.com/embed/TGQAhCAdqzg" frameborder="0" allowfullscreen></iframe>
+				 </div>
+				<br><br>
+				</div>
+				<div class="col-md-6 small">
+					<h1 class="h1-feature" title="Signing up at Matrified.com - Matrimonial Sites India">
+						<span class="glyphicon glyphicon-tasks intro-icon"></span> 
+						Step 1: Signup
+					</h1>
+					Visit www.Matrified.com - best of all matrimonial sites India. Signup with your contact details 
+					at which other members will contact you. Make sure your mobile number and contact email are correct.
+					<br><br>
+				</div>
+				<div class="col-md-6 small">
+					<h1 class="h1-feature" title="Security verification of your of Matrified - Matrimonial sites India account" >
+						<span class="glyphicon glyphicon-check intro-icon"></span>
+						Step 2: Security Check
+					</h1>
+					We verify your email id to check if its spam or real user. If we doubt we will double check 
+					the mobile number by doing a security verification call. Failing to do so will result in 
+					immediate account deactivation.<br>
+					<br>
+				</div>
+				<div class="col-md-12 small">
+					<h1 class="h1-feature" title="Matrified - Matrimonial Sites India - Exchanging Free messages and contact details">
+						<span class="glyphicon glyphicon-heart-empty intro-icon"></span>
+						Step 3: Exchange Message and Contact 
+					</h1>
+					If your profile passed security check, you will get full access to exchange message and 
+					mutually share your contact email with other members. If both the families accept each other's interest 
+					they will receive full contact details for FREE. <br>
+					<br>
+				</div>
+				<div class="col-md-12 small">
+					<h1 class="h1-feature" title="Other cool features of Matrified - Marimonial sites India">
+						<span class="glyphicon glyphicon-th intro-icon"></span> 
+						Other goodies from Matrified.com
+					</h1>
+					After you have successfully activated your profile, you can avail features like 
+					horoscope matching, zodiac reports, check strengths/ weakness of a person and much more! <br>
+					<ol>
+					<li>Most secure of all matrimonial sites India</li>
+					<li>Unique Kundali Matching like no other matrimonial sites India</li>
+					<li>One of the coolest matrimonial sites India to provide zodiac matching reports</li>
+					<li>Trusted of all matrimonial sites India</li>
+					<li>Free Characteristics reports like none other in matrimonial sites India domain</li>
+					<li>Email notifications with our matrimonial sites India service</li>
+					<li>The list goes endless, so what are your waiting for? Signup now!</li>
+					</ol>
+					<a href="/free-matrimonial.html">Even More ..</a>
+					<br>
+				</div>
+				
+			</div>     
+    </div>
+   </div>
+  </div>
+</div>
+			
+		</div>
+    </div>
+	<div style="padding: 25px 0px; color: rgb(204, 204, 204) ! important; font-size: 11px; background: none repeat scroll 0px 0px #252525; border-top: 10px solid rgb(0, 0, 0);">
+			<div class="container">
+			<!-- <div class="col-md-2 col-xs-6 col-sm-3">
+				<img src="assets/img/apl2.png" alt="Apurav Chauhan Powered">
+				<br><br>
+			</div> -->
+			<div class="col-md-2 col-xs-6 col-sm-3">
+				<img src="assets/img/webilm-pow.png" alt="Free matrimonials - Webilm Powered">
+				<br><br>
+			</div>
+			<div class="col-md-2 col-md-offset-2 col-xs-6 col-sm-3">&copy; www.matrified.com  2015</div>
+			<div class="col-md-4 col-md-offset-2 col-xs-12 col-sm-6">
+				<span><a href="index.html" class="footlink">Home</a></span> | 
+				<span> <a href="index.html#/contact" class="footlink">Contact Us</a></span> | 
+				<span> <a href="index.html#/privacy" class="footlink">Privacy Policy</a></span> | 
+				<span> <a href="index.html#/terms" class="footlink">Terms</a></span> 
+
+			</div>
+			</div>
+	</div>
+	<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 100px;">
+    <div class="modal-content">
+      <div class="modal-header" data-ng-class="{'error': 'alert-danger', 'success': 'alert-success'}[notify.type]" style="border:0">
+        <button id="modal-close" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <p class="modal-title" id="myModalLabel" data-ng-repeat="msg in notify.msg">{{msg}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <script type="text/javascript" src="assets/js/mins/app-index.min.js?v=5"></script>
+    <script src="assets/js/mins/third-party.min.js"></script>
+    <script>
+	  $(function () {
+	    var nua = navigator.userAgent
+	    var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+	    if (isAndroid) {
+	      $('select.form-control').removeClass('form-control').css('width', '100%');
+	    }else{
+	  	  $('select.form-control').addClass('input-sm');
+	    }
+	  })
+	  </script>
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-51934734-1', 'matrified.com');
+	  ga('send', 'pageview');
+	</script>
+	
+  </body>
+</html>

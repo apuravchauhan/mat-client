@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2" data-ng-show="vw=='init'">
+         <div class="alert alert-info small">
+         Please enter your email id registered with us and we will send you an email containing the Password reset link.
+         </div>
+          <div class="well dark-well">
+          <form name="resetKeyForm" data-ng-submit="initiateReset()" novalidate="novalidate">
+            <div class="form-group" data-ng-class="{ 'has-error' : resetKeyForm.mail.$invalid && showError}">
+               <label class="control-label small" >Registered Email</label>
+              <input name="mail" id="resetEmail" required="required" type="email" class="form-control input-sm" data-ng-model="email">
+               <small data-ng-show="resetKeyForm.mail.$invalid && showError" class="help-block">Valid email is required</small>
+            </div>
+              <button type="submit" class="btn btn-success btn-sm">Send link</button>
+          </form>
+         </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2" data-ng-show="vw=='change'">
+          <div class="well dark-well">
+          <form name="resetPassForm" data-ng-submit="resetPass()" novalidate="novalidate">
+            <div class="form-group" data-ng-class="{ 'has-error' : resetPassForm.pass.$invalid && showRError}">
+               <label class="control-label small" >New password</label>
+              <input name="pass" id="resetPass" required="required" type="password" class="form-control input-sm" data-ng-model="pass">
+               <small data-ng-show="resetPassForm.pass.$invalid && showRError" class="help-block">New password is required</small>
+            </div>
+              <button type="submit" class="btn btn-success btn-sm">Reset password</button>
+          </form>
+         </div>
+  </div>
+</div>

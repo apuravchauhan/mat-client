@@ -1,0 +1,95 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-success">
+        <div class="panel-heading app-pointer" data-toggle="collapse" data-parent="#accordion" data-target="#panel-name">
+          <h4 class="panel-title">
+           Change Name
+          </h4>
+        </div>
+        <div id="panel-name" class="panel-collapse collapse">
+          <div class="panel-body">
+          
+            <form data-ng-submit="updateName(user)"  name="nameForm" novalidate="novalidate">
+             <div class="form-group" data-ng-class="{ 'has-error' : nameForm.signupName.$invalid && !nameForm.signupName.$pristine }">
+              <input type="text" name="signupName" class="form-control" data-ng-model="user.info.name" placeholder="Contact Name" required="required"
+              data-ng-maxlength="40" data-ng-minlength="3" data-ng-value="{{'loggedUser.name'}}">
+              <p data-ng-show="nameForm.signupName.$error.required && !nameForm.signupName.$pristine" class="help-block">Name is required</p>
+              <p data-ng-show="nameForm.signupName.$error.maxlength" class="help-block">Name is too long</p>
+              <p data-ng-show="nameForm.signupName.$error.minlength" class="help-block">Name is too short</p>
+            </div>
+            <br>
+              <button type="submit" class="btn btn-default" data-ng-class="{'btn-success':nameForm.$valid}" data-ng-disabled="nameForm.$invalid">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      
+        <div class="panel panel-success">
+        <div class="panel-heading app-pointer" data-toggle="collapse" data-parent="#accordion" data-target="#panel-mob-privacy">
+          <h4 class="panel-title">
+           Mobile number privacy
+          </h4>
+        </div>
+        <div id="panel-mob-privacy" class="panel-collapse collapse">
+          <div class="panel-body">
+          
+            <form data-ng-submit="updatePrivacy(user)"  name="mobPrivacyForm" novalidate="novalidate">
+             <div class="form-group">
+              <div class="radio small">
+				  <label>
+				    <input type="radio" name="mobPrivacy" value="accepted" data-ng-model="user.meta.mobSec">
+				     Visible to the members I accept
+				  </label>
+				</div>
+				<div class="radio small">
+				  <label>
+				    <input type="radio" name="mobPrivacy" value="none" data-ng-model="user.meta.mobSec">
+				    Visible to nobody
+				  </label>
+				</div>
+            </div>
+            <br>
+              <button type="submit" class="btn btn-default btn-success">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel panel-success">
+        <div class="panel-heading app-pointer" data-toggle="collapse" data-parent="#accordion" data-target="#panel-password">
+          <h4 class="panel-title">
+           Change Password
+          </h4>
+        </div>
+        <div id="panel-password" class="panel-collapse collapse">
+          <div class="panel-body">
+           <form data-ng-submit="updatePass(user)"  name="passForm" novalidate="novalidate">
+             <div class="form-group" data-ng-class="{ 'has-error' : passForm.signupOldPass.$invalid && !passForm.signupOldPass.$pristine }">
+              <input type="password" name="signupOldPass" class="form-control" data-ng-model="user.oldPass" placeholder="Old password" 
+              required="required" data-ng-maxlength="20">
+              <p data-ng-show="passForm.signupOldPass.$error.required && !passForm.signupOldPass.$pristine" class="help-block">Old password is required</p>
+            </div>
+            <div class="form-group" data-ng-class="{ 'has-error' : passForm.signupPass.$invalid && !passForm.signupPass.$pristine }">
+              <input type="password" name="signupPass" class="form-control" data-ng-model="user.pass" placeholder="New password" 
+              required="required" data-ng-maxlength="20">
+              <p data-ng-show="passForm.signupPass.$error.required && !passForm.signupPass.$pristine" class="help-block">New password is required</p>
+              <p data-ng-show="passForm.signupPass.$error.maxlength" class="help-block">New password is too long</p>
+            </div>
+            <br>
+              <button type="submit" class="btn btn-default" data-ng-class="{'btn-success':passForm.$valid}" data-ng-disabled="passForm.$invalid">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+  <div class="well">
+  If you are looking to change your contact email or contact number, please write to us at <strong><a href="mailto:contact@matrified.com?Subject=Change contact details" target="_blank">contact@matrified.com</a></strong>
+  
+  </div>
+  	</div>
+</div>
